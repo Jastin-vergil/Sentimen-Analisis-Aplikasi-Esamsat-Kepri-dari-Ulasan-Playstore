@@ -25,14 +25,14 @@ stemmer = StemmerFactory().create_stemmer()
 stopwords = set(StopWordRemoverFactory().get_stop_words()) - NEGASI
 
 def preprocess(teks):
-    teks = str(teks).lower()                          # 1. case folding
-    teks = re.sub(r"http\S+|www\.\S+", " ", teks)     # 2. hapus URL
-    teks = re.sub(r"[^a-z\s]", " ", teks)             # 3. hapus angka, emoji, tanda baca
-    teks = re.sub(r"(.)\1{2,}", r"\1", teks)          #    "bagusss" -> "bagus"
-    token = teks.split()                               # 4. tokenizing
-    token = [SLANG.get(t, t) for t in token]           # 5. normalisasi slang
-    token = [t for t in token if t not in stopwords]   # 6. stopword removal
-    token = [stemmer.stem(t) for t in token]           # 7. stemming
+    teks = str(teks).lower()                          
+    teks = re.sub(r"http\S+|www\.\S+", " ", teks)     
+    teks = re.sub(r"[^a-z\s]", " ", teks)             
+    teks = re.sub(r"(.)\1{2,}", r"\1", teks)          
+    token = teks.split()                               
+    token = [SLANG.get(t, t) for t in token]           
+    token = [t for t in token if t not in stopwords]   
+    token = [stemmer.stem(t) for t in token]           
     return " ".join(t for t in token if t)
 
 # 3. Terapkan ke semua ulasan
