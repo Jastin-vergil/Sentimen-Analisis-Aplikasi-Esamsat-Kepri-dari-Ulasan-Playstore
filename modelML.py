@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 
-dataset = pd.read_csv('dataset_preprocess.csv')
+dataset = pd.read_csv('dataset_preprocessed.csv')
 
 # 2. Tentukan pelabelan berdasarkan kolom Rating
 def map_sentiment(rating):

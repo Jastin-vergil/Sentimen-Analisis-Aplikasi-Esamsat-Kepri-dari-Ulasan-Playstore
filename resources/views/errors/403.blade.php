@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title','Akses ditolak')
+@section('content')
+<div class="min-h-screen grid place-items-center text-center p-4"><div><div class="text-5xl mb-2">!</div><h1 class="text-xl font-bold">Akses ditolak</h1><p class="mb-4">Akun Anda tidak punya izin untuk membuka halaman ini.</p><a href="/" class="btn inline-block">Ke dashboard</a></div></div>
+@endsection
